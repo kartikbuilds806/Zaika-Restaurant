@@ -942,7 +942,7 @@ button { cursor: pointer; border: none; outline: none; background: none; font-fa
 }
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-bottom: 32px;
 }
@@ -2029,7 +2029,29 @@ button { cursor: pointer; border: none; outline: none; background: none; font-fa
   .about-features { flex-wrap: wrap; gap: 16px; }
   .reservation-grid { grid-template-columns: 1fr; gap: 40px; }
   .form-row { grid-template-columns: 1fr; }
-  .reservation-form { padding: 24px; }
+  .reservation-form { 
+    padding: 20px; 
+    margin: 0 auto;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form-group label {
+    font-size: 0.8rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+  .reservation-form .btn {
+    font-size: 0.8rem;
+    padding: 12px 20px;
+  }
+  .menu-card-image { height: 180px; }
+  .about-image-wrap { aspect-ratio: 1/1; max-width: 100%; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 1; grid-row: span 1; }
@@ -2047,4 +2069,30 @@ button { cursor: pointer; border: none; outline: none; background: none; font-fa
   .menu-grid { grid-template-columns: 1fr; }
   .reviews-track { flex-direction: column; }
   .review-card { min-width: 100%; max-width: 100%; }
+  .reservation-form {
+    padding: 16px;
+  }
+  .form-grid {
+    gap: 12px;
+  }
+  .form-group label {
+    font-size: 0.75rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+  .reservation-form .btn {
+    font-size: 0.75rem;
+    padding: 10px 16px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+  .menu-card-body { padding: 16px; }
+  .menu-card-name { font-size: 0.95rem; }
+  .menu-card-desc { font-size: 0.75rem; }
+  .section-label { font-size: 0.7rem; }
 }

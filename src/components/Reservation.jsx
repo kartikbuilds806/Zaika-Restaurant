@@ -7,6 +7,8 @@ export default function Reservation({ phone }) {
     name: '',
     email: '',
     phone: '',
+    address: '',
+    landmark: '',
     date: '',
     time: '',
     guests: '2'
@@ -22,11 +24,11 @@ export default function Reservation({ phone }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const msg = `🍽️ *Reservation Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Date:* ${formData.date}%0A*Time:* ${formData.time}%0A*Guests:* ${formData.guests}`;
+    const msg = `🍽️ *Reservation Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Address:* ${formData.address}%0A*Landmark:* ${formData.landmark}%0A*Date:* ${formData.date}%0A*Time:* ${formData.time}%0A*Guests:* ${formData.guests}`;
     window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
     setSubmitted(true);
     setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', date: '', time: '', guests: '2' });
+      setFormData({ name: '', email: '', phone: '', address: '', landmark: '', date: '', time: '', guests: '2' });
       setSubmitted(false);
     }, 2000);
   };
@@ -84,6 +86,30 @@ export default function Reservation({ phone }) {
                 name="phone"
                 placeholder="Your phone number"
                 value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Address *</label>
+              <input
+                type="text"
+                name="address"
+                placeholder="Your delivery/reservation address"
+                value={formData.address}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Landmark *</label>
+              <input
+                type="text"
+                name="landmark"
+                placeholder="Nearby landmark"
+                value={formData.landmark}
                 onChange={handleChange}
                 required
               />
